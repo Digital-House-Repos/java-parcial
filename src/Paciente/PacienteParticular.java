@@ -16,6 +16,6 @@ public class PacienteParticular extends Paciente {
     // ToString
     @Override
     public String toString() {
-        return "Particular - " + this.DNI + " " + this.apellido + " - " + this.nombre + " - " + this.costoConsulta;
+        return "Particular - " + this.DNI + " - " + this.apellido + " - " + this.nombre + " - " + this.costoConsulta;
     }
 }

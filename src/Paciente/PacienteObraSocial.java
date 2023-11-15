@@ -15,6 +15,11 @@ public class PacienteObraSocial extends Paciente {
         PacienteObraSocial.cantidadPacientesObraSocial++;
     }
 
+    // Getter
+    public int getNumeroAsociado() {
+        return numeroAsociado;
+    }
+
     // Methods
     public Boolean compararPaciente(PacienteObraSocial paciente) {
         return this.numeroAsociado > paciente.numeroAsociado;

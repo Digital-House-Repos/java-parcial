@@ -22,11 +22,16 @@ public class Main {
         System.out.println(paciente3);
 
         System.out.println();
-        System.out.println("El paciente 1 es mayor que el paciente 2?");
+        System.out.println("El paciente " + paciente1.getNumeroAsociado() + " es mayor que el paciente " + paciente2.getNumeroAsociado() + "?");
         System.out.println(paciente1.compararPaciente(paciente2));
         System.out.println();
 
-        // PAcientes Particulares
+        System.out.println("El paciente " + paciente3.getNumeroAsociado() + " es mayor que el paciente " + paciente2.getNumeroAsociado() + "?");
+        System.out.println(paciente3.compararPaciente(paciente2));
+        System.out.println();
+
+
+        // Pacientes Particulares
         System.out.println("Pacientes Particulares: ");
         PacienteParticular paciente4 = new PacienteParticular("Lucas", "Dalto", fechaActual, "111222333", 5890.0);
         System.out.println(paciente4);
@@ -34,5 +39,15 @@ public class Main {
         PacienteParticular paciente5 = new PacienteParticular("Steve", "Rogers", fechaActual, "12345678", 1000.0);
         System.out.println(paciente5);
 
+
+        // Consultas
+        System.out.println();
+        System.out.println("Consultas: ");
+        paciente1.solicitarConsulta(fechaActual, "Cardiología", 10, 30);
+
+        paciente1.solicitarConsulta(fechaActual, "Oftalmologia", 10, 30);
+
+        System.out.println();
+        paciente1.listarConsultas();
     }
 }

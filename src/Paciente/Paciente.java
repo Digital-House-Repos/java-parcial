@@ -1,6 +1,8 @@
 package Paciente;
 
 import java.util.Date;
+import java.util.List;
+import java.util.ArrayList;
 
 import Consulta.Consulta;
 
@@ -8,7 +10,7 @@ abstract class Paciente {
     protected String nombre;
     protected String apellido;
     protected Date nacimiento;
-    protected Consulta consulta; // lista?
+    protected List<Consulta> consulta = new ArrayList<>();
     protected Boolean primeraConsulta;
 
     // Constructor
@@ -22,6 +24,10 @@ abstract class Paciente {
     // Getters & Setter
 
     // ToString
+    @Override
+    public String toString() {
+        return "Paciente" + this.nombre + " " + this.apellido;
+    }
 
     // Methods
     public void evaluacionInicial() {
@@ -32,10 +38,21 @@ abstract class Paciente {
         }
     }
 
-    public void asistirAConsulta() {
+    public void solicitarConsulta(Date fecha, String especialidad, int hora, int minuto) {
         if (!this.primeraConsulta) {
             this.primeraConsulta = true;
         }
-        System.out.println("Asistiendo a consulta...");
+
+        Consulta nuevaConsulta = new Consulta(fecha, especialidad, hora, minuto);
+        this.consulta.add(nuevaConsulta);
+
+        System.out.println("Consulta solicitada con éxito.");
+    }
+
+    public void listarConsultas() {
+        System.out.println("Lista de consultas del paciente " + nombre + " " + apellido + ":");
+        for (Consulta consulta : consulta) {
+            System.out.println(consulta);
+        }
     }
 }

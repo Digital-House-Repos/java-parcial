@@ -16,7 +16,11 @@ public class Consulta {
         this.minuto = minuto;
     }
 
-    // Getters & Setter
-
     // ToString
+    @Override
+    public String toString() {
+        return "Fecha: " + fecha + '\n' +
+                "Especialidad: " + especialidad + '\n' +
+                "Hora: " + hora + ":" + minuto + '\n';
+    }
 }
