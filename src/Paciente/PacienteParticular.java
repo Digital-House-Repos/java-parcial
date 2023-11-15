@@ -12,4 +12,10 @@ public class PacienteParticular extends Paciente {
         this.DNI = DNI;
         this.costoConsulta = costoConsulta;
     }
+
+    // ToString
+    @Override
+    public String toString() {
+        return "Particular - " + this.DNI + " " + this.apellido + " - " + this.nombre + " - " + this.costoConsulta;
+    }
 }

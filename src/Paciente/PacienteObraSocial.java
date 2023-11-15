@@ -23,6 +23,6 @@ public class PacienteObraSocial extends Paciente {
     // ToString
     @Override
     public String toString() {
-        return this.numeroAsociado + " - " + this.nombre + " " + this.apellido + " - " + this.nombreObraSocial;
+        return "Obra Social - " + this.numeroAsociado + " - " + this.nombre + " " + this.apellido + " - " + this.nombreObraSocial;
     }
 }
